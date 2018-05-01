@@ -11,9 +11,10 @@ import {
   ClickAwayListener,
   Hidden
 } from "material-ui";
-import { Person, Notifications, Dashboard, Search } from "@material-ui/icons";
+import { Person, PowerSettingsNew, Notifications, Dashboard, Search } from "@material-ui/icons";
 
 import { CustomInput, IconButton as SearchButton } from "components";
+import LogoutButton from "./LogoutButton";
 
 import headerLinksStyle from "assets/jss/material-dashboard-react/headerLinksStyle";
 
@@ -28,6 +29,7 @@ class HeaderLinks extends React.Component {
   handleClose = () => {
     this.setState({ open: false });
   };
+
   render() {
     const { classes } = this.props;
     const { open } = this.state;
@@ -143,6 +145,10 @@ class HeaderLinks extends React.Component {
             <p className={classes.linkText}>Profile</p>
           </Hidden>
         </IconButton>
+        <LogoutButton
+          classes={classes}
+        >
+        </LogoutButton>
       </div>
     );
   }
